@@ -1,3 +1,13 @@
 body {
-  background-color: #F3F4F4;
+  background-color: #f3f4f4;
+}
+
+.hero-body {
+  left: 22px;
+  bottom: 38px;
+}
+
+.active {
+  color: #fff !important;
+  background: #5a8dee !important;
 }
