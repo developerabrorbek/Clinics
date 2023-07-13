@@ -1,9 +1,16 @@
-
+import Navbar from "../../components/Navbar";
+import Hero from "../../components/Hero";
+import Header from "../../components/Header";
 const Delaers = () => {
   return (
-    <div>
-      <h1>dealers page</h1>
-    </div>
+    <>
+      <Header />
+      <main className="main">
+        <Hero />
+        <Navbar />
+      </main>
+      <h1>Dealers page</h1>
+    </>
   );
 };
 
