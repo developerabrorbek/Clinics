@@ -11,3 +11,13 @@ body {
   color: #fff !important;
   background: #5a8dee !important;
 }
+
+.btn-custom-export {
+  border-radius: 5px;
+  background: #e5edfc;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-custom-export:hover {
+  background: #dce6f9;
+}
