@@ -1,22 +1,22 @@
-import EyeIcon from "../../assets/icons/eye-icon.svg";
+import EditIcon from "../../assets/icons/edit-icon.svg";
 import ExitModal from "../../assets//icons/exit-modal.svg";
-const HomeReadExpenseModal = ({ data }) => {
+const HomeEditExpenseModal = ({ data }) => {
   return (
     <>
       <img
-        src={EyeIcon}
+        src={EditIcon}
         role="button"
         className="me-2"
         data-bs-toggle="modal"
-        data-bs-target={`#readHomeIncomeModal${data.id}`}
-        alt="Read modal icon"
+        data-bs-target={`#editHomeIncomeModal${data.id}`}
+        alt="Edit modal icon"
       ></img>
 
       <div
         className="modal fade"
-        id={`readHomeIncomeModal${data.id}`}
+        id={`editHomeIncomeModal${data.id}`}
         tabIndex="-1"
-        aria-labelledby="readHomeIncome"
+        aria-labelledby="editHomeIncome"
         aria-hidden="true"
       >
         <div className="modal-dialog modal-lg modal-dialog-centered">
@@ -107,36 +107,35 @@ const HomeReadExpenseModal = ({ data }) => {
                     </label>
                   </div>
                   <div className="form-body__right d-grid gap-3">
-                    <label htmlFor="pharmacy">
+                  <label htmlFor="pharmacy">
                       <p className="text-body-secondary mb-1 fs-custom">
-                        АПТЕКА
+                      АПТЕКА
                       </p>
                       <select
-                        disabled
                         name="pharmacy"
                         id="pharmacy"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
                         <option value="0" disabled>
-                          Выберите аптеку
+                        Выберите аптеку
                         </option>
-                        <option value="1" selected>
-                          {data.chemist}
-                        </option>
+                        <option value="1" selected>{data.chemist}</option>
                         <option value="2">100</option>
                       </select>
                     </label>
                     <label htmlFor="quantity-taken">
                       <p className="text-body-secondary mb-1 fs-custom">
-                        КОЛИЧЕСТВО ВЗЯТОГО
+                        КОЛИЧЕСТВО ОТДАННОГО
                       </p>
                       <select
-                        disabled
                         name="quantity-taken"
                         id="quantity-taken"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">100</option>
+                        <option value="0" selected disabled>
+                          Введите количество
+                        </option>
+                        <option value="1">100</option>
                         <option value="2">100</option>
                       </select>
                     </label>
@@ -145,12 +144,14 @@ const HomeReadExpenseModal = ({ data }) => {
                         ЕДИНИЦА ИЗМЕРЕНИЯ ВЗЯТОГО
                       </p>
                       <select
-                        disabled
                         name="unit-of-measurament"
                         id="unit-of-measurament"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">Капсула</option>
+                        <option value="0" selected disabled>
+                          Выберите единицу измерения
+                        </option>
+                        <option value="1">Капсула</option>
                         <option value="2">Капсула</option>
                       </select>
                     </label>
@@ -187,21 +188,19 @@ const HomeReadExpenseModal = ({ data }) => {
                     <p className="text-body-secondary mb-1  fs-custom">
                       ПРИНЯЛ
                     </p>
-                    <select
-                      name="get"
-                      id="get"
-                      className="form-select"
-                      disabled
-                    >
-                      <option value="0">Выберите принимающего</option>
-                      <option value="1" selected>
-                        Азиза Ахматовна Азизова
+                    <select name="get" id="get" className="form-select">
+                      <option value="0" selected disabled>
+                        Выберите принимающего
                       </option>
+                      <option value="1">Азиза Ахматовна Азизова</option>
                     </select>
                   </label>
                 </div>
 
-                <div className="cancel d-flex justify-content-end">
+                <div className="cancel d-flex justify-content-end gap-4">
+                  <button type="submit" className="btn btn-success btn-sm px-4">
+                    Сохранить
+                  </button>
                   <button
                     type="button"
                     data-bs-dismiss="modal"
@@ -219,4 +218,4 @@ const HomeReadExpenseModal = ({ data }) => {
   );
 };
 
-export default HomeReadExpenseModal;
+export default HomeEditExpenseModal;
