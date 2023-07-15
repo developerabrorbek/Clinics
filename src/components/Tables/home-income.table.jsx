@@ -1,5 +1,5 @@
 import EditIcon from "../../assets/icons/edit-icon.svg";
-import EyeIcon from "../../assets/icons/eye-icon.svg";
+import HomeReadIncomeModal from "../Modals/home-read-income.modal";
 
 const HomeIncomeTable = ({tableData}) => {
   return (
@@ -121,14 +121,7 @@ const HomeIncomeTable = ({tableData}) => {
                     <td className="text-body-secondary">{data.vozv}</td>
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
-                      <img
-                        role="button"
-                        src={EyeIcon}
-                        alt="watch icon"
-                        id={data.id}
-                        title="show"
-                        className="me-1"
-                      />{" "}
+                      <HomeReadIncomeModal data={data}/>
                       <img
                         role="button"
                         src={EditIcon}

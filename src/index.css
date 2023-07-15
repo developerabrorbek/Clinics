@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #f3f4f4;
 }
@@ -32,4 +38,16 @@ th {
   color: white;
   min-width: 92px;
   font-size: 12px;
+}
+
+.fade {
+  background: #d4d8dd79;
+}
+
+.fs-custom {
+  font-size: 14px;
+}
+
+.time-icon {
+  right: 12px;
 }
