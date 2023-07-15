@@ -1,4 +1,5 @@
 import EditIcon from "../../assets/icons/edit-icon.svg";
+import HomeEditIncomeModal from "../Modals/home-edit-income.modal";
 import HomeReadIncomeModal from "../Modals/home-read-income.modal";
 
 const HomeIncomeTable = ({tableData}) => {
@@ -122,13 +123,14 @@ const HomeIncomeTable = ({tableData}) => {
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
                       <HomeReadIncomeModal data={data}/>
-                      <img
+                      {/* <img
                         role="button"
                         src={EditIcon}
                         alt="edit icon"
                         title="edit"
                         id={data.id}
-                      />
+                      /> */}
+                      <HomeEditIncomeModal data={data}/>
                     </td>
                   </tr>
                 </>

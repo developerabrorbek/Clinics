@@ -1,29 +1,29 @@
-import EyeIcon from "../../assets/icons/eye-icon.svg";
+import EditIcon from "../../assets/icons/edit-icon.svg";
 import ExitModal from "../../assets//icons/exit-modal.svg";
-const HomeReadIncomeModal = ({ data }) => {
+const HomeEditIncomeModal = ({ data }) => {
   return (
     <>
       <img
-        src={EyeIcon}
+        src={EditIcon}
         role="button"
         className="me-2"
         data-bs-toggle="modal"
-        data-bs-target="#readHomeIncomeModal"
-        alt="Read modal icon"
+        data-bs-target="#editHomeIncomeModal"
+        alt="Edit modal icon"
       ></img>
 
       <div
         className="modal fade"
-        id="readHomeIncomeModal"
+        id="editHomeIncomeModal"
         tabIndex="-1"
-        aria-labelledby="readHomeIncome"
+        aria-labelledby="editHomeIncome"
         aria-hidden="true"
       >
         <div className="modal-dialog modal-lg modal-dialog-centered">
           <div className="modal-content shadow-lg p-3">
             <div className="modal-header text-center">
               <h2 className="modal-title fs-4 text-center  w-100 text-body-secondary">
-                Оприходование медикамента : Парацетамол
+                Оприходование медикамента : {data.name}
               </h2>
               <img
                 src={ExitModal}
@@ -35,7 +35,7 @@ const HomeReadIncomeModal = ({ data }) => {
             </div>
             <div className="modal-body ">
               <form>
-                <div className="form-head row row-cols-3 shadow-lg px-4 py-3 justify-content-between rounded-3 mb-3">
+                <div className="form-head d-flex shadow-lg px-4 py-3 justify-content-between rounded-3 mb-3">
                   <label htmlFor="document">
                     <p className="text-body-secondary mb-1 fs-custom">
                       КОД ДОКУМЕНТА
@@ -46,22 +46,40 @@ const HomeReadIncomeModal = ({ data }) => {
                       id="document"
                       className="form-select form-select-sm text-secondary-emphasis"
                     >
-                      <option value="0">CL1001</option>
+                      <option value="0" selected>
+                        CL1001
+                      </option>
                       <option value="2">CL1002</option>
                     </select>
                   </label>
-                  <label htmlFor="code-of-medicine">
+                  <label htmlFor="medicine-code">
                     <p className="text-body-secondary mb-1 fs-custom">
                       КОД СПИСОК МЕДИКАМЕНТОВ
                     </p>
                     <select
-                      disabled
                       name="medicine-code"
                       id="medicine-code"
                       className="form-select form-select-sm text-secondary-emphasis w-100"
                     >
-                      <option value="0">DL1001</option>
+                      <option value="0" selected>
+                        DL1001
+                      </option>
                       <option value="2">DL1001</option>
+                    </select>
+                  </label>
+                  <label htmlFor="unpacking-code">
+                    <p className="text-body-secondary mb-1 fs-custom">
+                      КОД РАСПАКОВКИ
+                    </p>
+                    <select
+                      name="unpacking-code"
+                      id="unpacking-code"
+                      className="form-select form-select-sm text-secondary-emphasis w-100"
+                    >
+                      <option value="0" selected>
+                        UI1001
+                      </option>
+                      <option value="2">UI1001</option>
                     </select>
                   </label>
                   <label htmlFor="dealer">
@@ -72,7 +90,9 @@ const HomeReadIncomeModal = ({ data }) => {
                       id="dealer"
                       className="form-select form-select-sm  text-secondary-emphasis w-100"
                     >
-                      <option value="0">ООО “My Pharm”</option>
+                      <option value="0" selected>
+                        ООО “My Pharm”
+                      </option>
                       <option value="2">ООО “My Pharm”</option>
                     </select>
                   </label>
@@ -90,7 +110,9 @@ const HomeReadIncomeModal = ({ data }) => {
                         id="medicine"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">Парацетамол</option>
+                        <option value="0" selected>
+                          Лориста 50мг
+                        </option>
                         <option value="2">Парацетамол</option>
                       </select>
                     </label>
@@ -104,7 +126,9 @@ const HomeReadIncomeModal = ({ data }) => {
                         id="quantity"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">100</option>
+                        <option value="0" selected>
+                          100
+                        </option>
                         <option value="2">101</option>
                       </select>
                     </label>
@@ -118,7 +142,9 @@ const HomeReadIncomeModal = ({ data }) => {
                         id="unit"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">Капсула</option>
+                        <option value="0" selected>
+                          Выберите единицу измерения
+                        </option>
                         <option value="2">Капсула</option>
                       </select>
                     </label>
@@ -127,7 +153,7 @@ const HomeReadIncomeModal = ({ data }) => {
                         ДАТА РЕГИСТРАЦИИ
                       </p>
                       <input
-                      disabled
+                        disabled
                         type="date"
                         name="registration"
                         id="registration"
@@ -156,12 +182,13 @@ const HomeReadIncomeModal = ({ data }) => {
                         СКЛАД
                       </p>
                       <select
-                        disabled
                         name="store"
                         id="store"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">Главный</option>
+                        <option value="0" selected disabled>
+                          Все склады
+                        </option>
                         <option value="1">Главный</option>
                       </select>
                     </label>
@@ -170,12 +197,13 @@ const HomeReadIncomeModal = ({ data }) => {
                         КОЛИЧЕСТВО ВЗЯТОГО
                       </p>
                       <select
-                        disabled
                         name="quantity-taken"
                         id="quantity-taken"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">100</option>
+                        <option value="0" selected disabled>
+                          Введите количество
+                        </option>
                         <option value="2">100</option>
                       </select>
                     </label>
@@ -184,59 +212,76 @@ const HomeReadIncomeModal = ({ data }) => {
                         ЕДИНИЦА ИЗМЕРЕНИЯ ВЗЯТОГО
                       </p>
                       <select
-                        disabled
                         name="unit-of-measurament"
                         id="unit-of-measurament"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">Капсула</option>
+                        <option value="0" selected disabled>
+                          Все единица измерения взятого
+                        </option>
                         <option value="2">Капсула</option>
                       </select>
                     </label>
                     <label htmlFor="date-of-cost">
                       <p className="text-body-secondary mb-1 fs-custom">
-                        ДАТА ОПРИХОДОВАНИЕ
+                        ДАТА РАСПАКОВКЫ
                       </p>
                       <input
-                      disabled
+                        disabled
+                        value={data.data}
                         type="date"
                         name="date-of-cost"
                         id="date-of-cost"
                         className="form-control"
                       />
                     </label>
-                    <label
-                      htmlFor="status-of-posting"
-                      className="d-flex align-items-center gap-3"
-                    >
-                      <p className="text-body-secondary mb-0 fs-custom">
+                    <label htmlFor="status-of-posting">
+                      <p className="text-body-secondary mb-1 fs-custom">
                         СТАТУС ОПРИХОДОВАНИЕ :
                       </p>
-                      <button type="button" className="btn btn-success btn-sm">
-                        Распаковано
-                      </button>
-                    </label>
-                  </div>
-                  <div className="done mt-4 col-12">
-                    <label
-                      htmlFor="record-made"
-                      className="d-flex align-items-center gap-3"
-                    >
-                      <p className="text-body-secondary mb-0  fs-custom">
-                        ЗАПИСЬ СДЕЛАЛ :
-                      </p>
-                      <button
-                        type="button"
-                        className="btn btn-outline-secondary btn-sm"
-                        disabled
+                      <select
+                        name="status-of-posting"
+                        id="status-of-posting"
+                        className="form-select"
                       >
-                        Камрон Хамроевич Олимов
-                      </button>
+                        <option value="0" selected disabled>
+                          Все статусы опрхидование
+                        </option>
+                      </select>
                     </label>
                   </div>
                 </div>
 
-                <div className="cancel d-flex justify-content-end">
+                <div className="form-footer row row-cols-2 mt-4 shadow-lg px-4 py-3  justify-content-between rounded-3 mb-3">
+                  <label htmlFor="gave">
+                    <p className="text-body-secondary mb-1 fs-custom">ОТДАЛ</p>
+                    <select
+                      name="gave"
+                      id="gave"
+                      className="form-select"
+                      disabled
+                    >
+                      <option value="0" selected>
+                        Камрон Хамроевич Олимов
+                      </option>
+                    </select>
+                  </label>
+                  <label htmlFor="get">
+                    <p className="text-body-secondary mb-1  fs-custom">
+                      ПРИНЯЛ
+                    </p>
+                    <select name="get" id="get" className="form-select">
+                      <option value="0" selected disabled>
+                        Выберите принимающего
+                      </option>
+                    </select>
+                  </label>
+                </div>
+
+                <div className="submit-form d-flex justify-content-end gap-4">
+                  <button type="submit" className="btn btn-success btn-sm px-4">
+                    Сохранить
+                  </button>
                   <button
                     type="button"
                     data-bs-dismiss="modal"
@@ -254,4 +299,4 @@ const HomeReadIncomeModal = ({ data }) => {
   );
 };
 
-export default HomeReadIncomeModal;
+export default HomeEditIncomeModal;
