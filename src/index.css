@@ -21,3 +21,15 @@ body {
 .btn-custom-export:hover {
   background: #dce6f9;
 }
+
+th {
+  background-color: #6f919f !important;
+  color: white !important;
+  font-size: 12px;
+}
+
+.table-button {
+  color: white;
+  min-width: 92px;
+  font-size: 12px;
+}
