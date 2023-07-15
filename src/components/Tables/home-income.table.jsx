@@ -1,8 +1,8 @@
-import EditIcon from "../../assets/icons/edit-icon.svg";
+import HomeCreateIncomeModal from "../Modals/home-create-income.modal";
 import HomeEditIncomeModal from "../Modals/home-edit-income.modal";
 import HomeReadIncomeModal from "../Modals/home-read-income.modal";
 
-const HomeIncomeTable = ({tableData}) => {
+const HomeIncomeTable = ({ tableData }) => {
   return (
     <>
       <div className="income-body__table p-3 d-flex justify-content-center flex-column gap-3">
@@ -61,7 +61,7 @@ const HomeIncomeTable = ({tableData}) => {
               Экспорт
             </button>
 
-            <button className="btn btn-primary d-flex gap-2 align-items-center">
+            {/* <button className="btn btn-primary d-flex gap-2 align-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="17"
@@ -87,7 +87,8 @@ const HomeIncomeTable = ({tableData}) => {
                 </defs>
               </svg>
               Добавить приход
-            </button>
+            </button> */}
+            <HomeCreateIncomeModal/>
           </div>
         </div>
         <table className="table table-responsive table-bordered">
@@ -122,8 +123,8 @@ const HomeIncomeTable = ({tableData}) => {
                     <td className="text-body-secondary">{data.vozv}</td>
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
-                      <HomeReadIncomeModal data={data}/>
-                      <HomeEditIncomeModal data={data}/>
+                      <HomeReadIncomeModal data={data} />
+                      <HomeEditIncomeModal data={data} />
                     </td>
                   </tr>
                 </>
