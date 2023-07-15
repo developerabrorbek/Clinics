@@ -8,13 +8,13 @@ const HomeReadIncomeModal = ({ data }) => {
         role="button"
         className="me-2"
         data-bs-toggle="modal"
-        data-bs-target="#readHomeIncomeModal"
+        data-bs-target={`#readHomeIncomeModal${data.id}`}
         alt="Read modal icon"
       ></img>
 
       <div
         className="modal fade"
-        id="readHomeIncomeModal"
+        id={`readHomeIncomeModal${data.id}`}
         tabIndex="-1"
         aria-labelledby="readHomeIncome"
         aria-hidden="true"
@@ -127,7 +127,7 @@ const HomeReadIncomeModal = ({ data }) => {
                         ДАТА РЕГИСТРАЦИИ
                       </p>
                       <input
-                      disabled
+                        disabled
                         type="date"
                         name="registration"
                         id="registration"
@@ -198,7 +198,7 @@ const HomeReadIncomeModal = ({ data }) => {
                         ДАТА ОПРИХОДОВАНИЕ
                       </p>
                       <input
-                      disabled
+                        disabled
                         type="date"
                         name="date-of-cost"
                         id="date-of-cost"

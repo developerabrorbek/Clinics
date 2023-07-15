@@ -8,13 +8,13 @@ const HomeEditIncomeModal = ({ data }) => {
         role="button"
         className="me-2"
         data-bs-toggle="modal"
-        data-bs-target="#editHomeIncomeModal"
+        data-bs-target={`#editHomeIncomeModal${data.id}`}
         alt="Edit modal icon"
       ></img>
 
       <div
         className="modal fade"
-        id="editHomeIncomeModal"
+        id={`editHomeIncomeModal${data.id}`}
         tabIndex="-1"
         aria-labelledby="editHomeIncome"
         aria-hidden="true"

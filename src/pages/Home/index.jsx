@@ -11,7 +11,7 @@ const incomeTableData = [
   {
     id: 1,
     number: 1,
-    name: "Парецатамол",
+    name: "Лориста 50мг",
     dealer: "ООО “My Pharm”",
     contract: "C10001",
     change: "5 лист / Коробка",

@@ -123,13 +123,6 @@ const HomeIncomeTable = ({tableData}) => {
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
                       <HomeReadIncomeModal data={data}/>
-                      {/* <img
-                        role="button"
-                        src={EditIcon}
-                        alt="edit icon"
-                        title="edit"
-                        id={data.id}
-                      /> */}
                       <HomeEditIncomeModal data={data}/>
                     </td>
                   </tr>
