@@ -1,5 +1,6 @@
 import EditIcon from "../../assets/icons/edit-icon.svg";
 import EyeIcon from "../../assets/icons/eye-icon.svg";
+import HomeReadExpenseModal from "../Modals/home-read-expense.modal";
 
 const HomeExpenseTable = ({ tableData }) => {
   return (
@@ -123,14 +124,15 @@ const HomeExpenseTable = ({ tableData }) => {
                     </td>
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
-                      <img
+                      {/* <img
                         role="button"
                         src={EyeIcon}
                         alt="watch icon"
                         id={data.id}
                         title="show"
                         className="me-1"
-                      />{" "}
+                      />{" "} */}
+                      <HomeReadExpenseModal data={data}/>
                       <img
                         role="button"
                         src={EditIcon}

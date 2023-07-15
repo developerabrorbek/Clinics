@@ -60,34 +60,6 @@ const HomeIncomeTable = ({ tableData }) => {
               </svg>
               Экспорт
             </button>
-
-            {/* <button className="btn btn-primary d-flex gap-2 align-items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="17"
-                height="16"
-                viewBox="0 0 17 16"
-                fill="none"
-              >
-                <g clipPath="url(#clip0_278_10473)">
-                  <path
-                    d="M14.9449 6.32017H9.75453V1.53015C9.75453 0.942372 9.23802 0.465698 8.60113 0.465698H7.44772C6.81083 0.465698 6.29432 0.942372 6.29432 1.53015V6.32017H1.104C0.467101 6.32017 -0.049408 6.79684 -0.049408 7.38462V8.44907C-0.049408 9.03684 0.467101 9.51352 1.104 9.51352H6.29432V14.3035C6.29432 14.8913 6.81083 15.368 7.44772 15.368H8.60113C9.23802 15.368 9.75453 14.8913 9.75453 14.3035V9.51352H14.9449C15.5818 9.51352 16.0983 9.03684 16.0983 8.44907V7.38462C16.0983 6.79684 15.5818 6.32017 14.9449 6.32017Z"
-                    fill="white"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_278_10473">
-                    <rect
-                      width="17"
-                      height="16"
-                      fill="white"
-                      transform="translate(-0.000488281)"
-                    />
-                  </clipPath>
-                </defs>
-              </svg>
-              Добавить приход
-            </button> */}
             <HomeCreateIncomeModal/>
           </div>
         </div>
