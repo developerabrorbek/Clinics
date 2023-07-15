@@ -118,7 +118,7 @@ const HomeExpenseTable = ({ tableData }) => {
                     <td className="text-body-secondary">{data.kolich}</td>
                     <td className="text-body-secondary">{data.kolvz}</td>
                     <td className="text-body-secondary">{data.left}</td>
-                    <td className="text-body-secondary">{data.status}</td>
+                    <td className="text-body-secondary text-center">{data.status}</td>
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
                       <img

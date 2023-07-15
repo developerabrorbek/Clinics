@@ -66,53 +66,69 @@ const expenseTableData = [
   {
     id: 1,
     number: 1,
-    name: "Главный",
+    name: "Парецатамол ",
+    store: "Главный",
     chemist: "Неврология ",
-    contract: "C10001",
     change: "5 лист / Коробка",
-    kolich: "100",
-    kolvz: "100",
-    left: 319,
-    status: <button className="table-button btn btn-success px-1 py-1 text-center">Отдано</button>,
+    kolich: 20,
+    kolvz: 0,
+    left: 520,
+    status: (
+      <button className="table-button btn btn-success px-1 pt-0 pb-1 text-center">
+        Отдано
+      </button>
+    ),
     data: "2023-05-22",
   },
   {
     id: 2,
     number: 2,
-    name: "Главный",
-    chemist: "Неврология ",
-    contract: "C10001",
-    change: "5 лист / Коробка",
-    kolich: "100",
-    kolvz: "100",
-    left: 319,
-    status: <button className="table-button btn btn-warning px-1 py-1 text-center">В ожидании</button>,
+    name: "Кетонал  ДУО ",
+    store: "Главный",
+    chemist: "Стационар  ",
+    change: "Капслуа",
+    kolich: 25,
+    kolvz: 10,
+    left: 350,
+    status: (
+      <button className="table-button btn btn-warning px-1 pt-0 pb-1 text-center">
+        В ожидании
+      </button>
+    ),
     data: "2023-05-22",
   },
   {
     id: 3,
     number: 3,
-    name: "Главный",
-    chemist: "Неврология ",
-    contract: "C10001",
+    name: "Лориста 50мг ",
+    store: "Главный",
+    chemist: "Кордиология  ",
     change: "5 лист / Коробка",
-    kolich: "100",
-    kolvz: "100",
+    kolich: 15,
+    kolvz: 0,
     left: 319,
-    status: <button className="table-button btn btn-danger px-1 py-1 text-center">Отказано</button>,
+    status: (
+      <button className="table-button btn btn-danger px-1 pt-0 pb-1 text-center">
+        Отказано
+      </button>
+    ),
     data: "2023-05-22",
   },
   {
     id: 4,
     number: 4,
-    name: "Главный",
+    name: "Парецатамол ",
+    store: "Главный",
     chemist: "Неврология ",
-    contract: "C10001",
     change: "5 лист / Коробка",
-    kolich: "100",
-    kolvz: "100",
-    left: 319,
-    status: <button className="table-button btn btn-success px-1 py-1 text-center">Отдано</button>,
+    kolich: 50,
+    kolvz: 12,
+    left: 400,
+    status: (
+      <button className="table-button btn btn-success px-1 pt-0 pb-1 text-center">
+        Отдано
+      </button>
+    ),
     data: "2023-05-22",
   },
 ];
