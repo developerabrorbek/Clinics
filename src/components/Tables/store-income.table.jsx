@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
 import SortIcon from "../../assets/icons/sort-icon.svg";
-import ReadIcon from "../../assets/icons/eye-icon.svg";
-import AddIcon from "../../assets/icons/add-icon.svg";
-import EditIcon from "../../assets/icons/edit-icon.svg";
 import SortIconReverse from "../../assets/icons/sort-reverse.svg";
 import DownloadIcon from "../../assets/icons/download-icon.svg";
+import HomeCreateExpenseModal from "../Modals/home-create-expense.modal";
+import ReadIcon from "../../assets/icons/eye-icon.svg";
+// import AddIcon from "../../assets/icons/add-icon.svg";
+import EditIcon from "../../assets/icons/edit-icon.svg";
+import HomeWatchMedicineModal from "../Modals/home-watch-medicine.modal";
 import { useState } from "react";
 
-const StoreMainTable = ({ tableData }) => {
+const StoreIncomeTable = ({ tableData }) => {
   const [data, setData] = useState([...tableData]);
   const [order, setOrder] = useState("asc");
   const [icon, setIcon] = useState(SortIcon);
@@ -76,10 +77,7 @@ const StoreMainTable = ({ tableData }) => {
               Экспорт
             </button>
 
-            <button className="btn btn-primary d-flex gap-2 align-items-center">
-              <img src={AddIcon} alt="add icon" />
-              Добавить расход
-            </button>
+            <HomeCreateExpenseModal data={tableData} />
           </div>
         </div>
         <table className="table table-responsive table-bordered">
@@ -93,12 +91,33 @@ const StoreMainTable = ({ tableData }) => {
                 <img src={icon} alt="sort icon" className="float-end" />
               </th>
               <th onClick={handleSort} data-column="store" data-order={order}>
-                СОТРУДНИКИ{" "}
-                <img src={icon} alt="sort icon" className="float-end" />
+                ДИЛЕР <img src={icon} alt="sort icon" className="float-end" />
               </th>
               <th onClick={handleSort} data-column="chemist" data-order={order}>
-                ЭТАЖ / КОМНАТА{" "}
+                ДОКУМЕНТ{" "}
                 <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="change" data-order={order}>
+                ЕД. ИЗМЕРЕНИЯ{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="kolich" data-order={order}>
+                КОЛИЧ. <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="kolvz" data-order={order}>
+                КОЛ. ВЗЯТОГО{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="left" data-order={order}>
+                КОЛ. ОСТАТОК{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="status" data-order={order}>
+                КОЛ. ВОЗВРАТА{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="data" data-order={order}>
+                ДАТА <img src={icon} alt="sort icon" className="float-end" />
               </th>
               <th onClick={handleSort} data-column="action" data-order={order}>
                 ДЕЙСТВИЕ{" "}
@@ -111,19 +130,18 @@ const StoreMainTable = ({ tableData }) => {
               return (
                 <>
                   <tr>
-                    <td className="text-body-secondary">{data.id}</td>
+                    <td className="text-body-secondary">{data.number}</td>
                     <td className="text-primary">
-                      <Link
-                        className="text-decoration-none"
-                        to={`/store/${data.id}`}
-                      >
-                        {data.name}
-                      </Link>
+                      <HomeWatchMedicineModal data={data} />
                     </td>
-                    <td className="text-primary">{data.employee}</td>
-                    <td className="text-body-secondary">
-                      {data.floor} Этаж {data.room} Комната{" "}
-                    </td>
+                    <td className="text-primary">{data.dealer}</td>
+                    <td className="text-primary">{data.contract} </td>
+                    <td className="text-body-secondary">{data.change} </td>
+                    <td className="text-body-secondary">{data.kolich}</td>
+                    <td className="text-body-secondary">{data.kolvz}</td>
+                    <td className="text-body-secondary">{data.left}</td>
+                    <td className="text-body-secondary">{data.vozv}</td>
+                    <td className="text-body-secondary">{data.data}</td>
                     <td>
                       <img
                         src={ReadIcon}
@@ -171,4 +189,4 @@ const StoreMainTable = ({ tableData }) => {
   );
 };
 
-export default StoreMainTable;
+export default StoreIncomeTable;

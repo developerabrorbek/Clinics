@@ -3,7 +3,7 @@ import HomeEditIncomeModal from "../Modals/home-edit-income.modal";
 import HomeReadIncomeModal from "../Modals/home-read-income.modal";
 import HomeWatchMedicineModal from "../Modals/home-watch-medicine.modal";
 import SortIcon from "../../assets/icons/sort-icon.svg"
-import SortReverseIcon from "../../assets/icons/sort-reverse.svg"
+// import SortReverseIcon from "../../assets/icons/sort-reverse.svg"
 
 const HomeIncomeTable = ({ tableData }) => {
   return (

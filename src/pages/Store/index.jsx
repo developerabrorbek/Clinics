@@ -8,19 +8,22 @@ const storeMainTableData = [
     id: 1,
     name: "Главный",
     employee: "Камрон Хамроевич Олимов",
-    floor: "0 Этаж     1 Комната ",
+    floor: 0,
+    room: 1,
   },
   {
     id: 2,
     name: "Зав отделение ",
     employee: "Отахон Сирожиддинович Окилов",
-    floor: "0 Этаж     3 Комната   ",
+    floor: 0,
+    room: 3,
   },
   {
     id: 3,
     name: "Главный",
     employee: "Камрон Хамроевич Олимов",
-    floor: "0 Этаж     3 Комната   ",
+    floor: 0,
+    room: 3,
   },
 ];
 
@@ -39,7 +42,7 @@ const Store = () => {
                   Список складов
                 </h3>
                 <hr />
-                <StoreMainTable tableData={storeMainTableData}/>
+                <StoreMainTable tableData={storeMainTableData} />
               </div>
             </div>
           </div>
