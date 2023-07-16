@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
@@ -132,7 +133,8 @@ const expenseTableData = [
     data: "2023-05-22",
   },
 ];
-const Delaers = () => {
+
+const SingleStore = () => {
   const [isIncome, setIsIncome] = useState(true);
 
   const activeButtonClass = "btn btn-primary px-4 py-2";
@@ -181,9 +183,9 @@ const Delaers = () => {
           </div>
         </div>
       </main>
-      <h1>Dealers page</h1>
+      <h1>Single Store page</h1>
     </>
   );
 };
 
-export default Delaers;
+export default SingleStore;
