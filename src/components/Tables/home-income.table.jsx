@@ -1,6 +1,7 @@
 import HomeCreateIncomeModal from "../Modals/home-create-income.modal";
 import HomeEditIncomeModal from "../Modals/home-edit-income.modal";
 import HomeReadIncomeModal from "../Modals/home-read-income.modal";
+import HomeWatchMedicineModal from "../Modals/home-watch-medicine.modal";
 
 const HomeIncomeTable = ({ tableData }) => {
   return (
@@ -85,7 +86,7 @@ const HomeIncomeTable = ({ tableData }) => {
                 <>
                   <tr>
                     <td className="text-body-secondary">{data.number}</td>
-                    <td className="text-primary">{data.name}</td>
+                    <td className="text-primary"><HomeWatchMedicineModal data={data}/></td>
                     <td className="text-primary">{data.dealer}</td>
                     <td className="text-primary">{data.contract} </td>
                     <td className="text-body-secondary">{data.change} </td>

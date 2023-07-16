@@ -1,12 +1,65 @@
-import EditIcon from "../../assets/icons/edit-icon.svg";
-import EyeIcon from "../../assets/icons/eye-icon.svg";
-import DownloadIcon from "../../assets/icons/download-icon.svg";
-import HomeCreateExpenseModal from "../Modals/home-create-expense.modal";
-import HomeEditExpenseModal from "../Modals/home-edit-expense.modal";
-import HomeReadExpenseModal from "../Modals/home-read-expense.modal";
-import HomeWatchMedicineModal from "../Modals/home-watch-medicine.modal";
+import EditIcon from "../../assets/icons/edit-icon.svg"
+import WatchIcon from "../../assets/icons/eye-icon.svg"
+import ExportIcon from "../../assets/icons/download-icon.svg";
 
-const HomeExpenseTable = ({ tableData }) => {
+const tableData = [
+  {
+    id: 1,
+    name : "Лориста 50мг",
+    document: "C10001",
+    kolich: 100,
+    change: "5 лист / Коробка ",
+    store: "Главный",
+    kol: 70,
+    izm: "5 лист / Коробка ",
+    kodRas: "UI10020",
+    status: (
+      <button className="table-button btn btn-success px-1 pt-0 pb-1 text-center">
+        Отдано
+      </button>
+    ),
+    kodSp: "DL1009 ",
+    data: "2023-05-22",
+  },
+  {
+    id: 2,
+    name : "Парецатамол ",
+    document: "C10001",
+    kolich: 100,
+    change: "5 лист / Коробка ",
+    store: "Главный",
+    kol: 70,
+    izm: "5 лист / Коробка ",
+    kodRas: "UI10020",
+    status: (
+      <button className="table-button btn btn-success px-1 pt-0 pb-1 text-center">
+        Отдано
+      </button>
+    ),
+    kodSp: "DL1009 ",
+    data: "2023-05-22",
+  },
+  {
+    id: 3,
+    name : "Парецатамол ",
+    document: "C100012",
+    kolich: 100,
+    change: "5 лист / Коробка ",
+    store: "Главный",
+    kol: 70,
+    izm: "5 лист / Коробка ",
+    kodRas: "UI10020",
+    status: (
+      <button className="table-button btn btn-danger px-1 pt-0 pb-1 text-center">
+        Отказано
+      </button>
+    ),
+    kodSp: "DL1009 ",
+    data: "2023-05-22",
+  },
+];
+
+const HomeMedicineTable = () => {
   return (
     <>
       <div className="income-body__table p-3 d-flex justify-content-center flex-column gap-3">
@@ -38,51 +91,47 @@ const HomeExpenseTable = ({ tableData }) => {
               />
             </form>
             <button className="export-button btn btn-custom-export text-primary border-0 d-flex gap-2 align-items-center">
-              <img src={DownloadIcon} alt="download icon" />
+              <img src={ExportIcon} alt="export icon" />
               Экспорт
             </button>
-
-            <HomeCreateExpenseModal data={tableData} />
           </div>
         </div>
         <table className="table table-responsive table-bordered">
           <thead>
             <tr>
               <th>№</th>
-              <th>НАИМЕНОВАНИЕ</th>
-              <th>Склад</th>
-              <th>Аптека</th>
-              <th>ЕД. ИЗМЕРЕНИЯ</th>
+              <th>ДОКУМЕНТ</th>
               <th>КОЛИЧ.</th>
-              <th>КОЛ. ВЗЯТОГО</th>
-              <th>ОБ ОСТАТОК</th>
-              <th>СТАТУС</th>
+              <th>ЕД. ИЗМЕРЕНИЯ</th>
+              <th>СКЛАД</th>
+              <th>КОЛ. ВЗЯТ.</th>
+              <th>ЕД. ИЗМ. ВЗЯТ.</th>
+              <th>КОД РАСП.</th>
+              <th>СТАТУС РАСП.</th>
+              <th>КОД СП. М.</th>
               <th>ДАТА</th>
               <th>ДЕЙСТВИЕ</th>
             </tr>
           </thead>
           <tbody>
-            {tableData.map((data) => {
+            {tableData.map((data, i) => {
               return (
                 <>
                   <tr>
-                    <td className="text-body-secondary">{data.number}</td>
-                    <td className="text-primary">
-                      <HomeWatchMedicineModal data={data} />
-                    </td>
-                    <td className="text-primary">{data.store}</td>
-                    <td className="text-primary">{data.chemist} </td>
-                    <td className="text-body-secondary">{data.change} </td>
-                    <td className="text-body-secondary">{data.kolich}</td>
-                    <td className="text-body-secondary">{data.kolvz}</td>
-                    <td className="text-body-secondary">{data.left}</td>
-                    <td className="text-body-secondary text-center">
-                      {data.status}
-                    </td>
+                    <td className="text-body-secondary">{i+1}</td>
+                    <td className="text-primary">{data.document}</td>
+                    <td className="text-primary">{data.kolich}</td>
+                    <td className="text-primary">{data.change} </td>
+                    <td className="text-body-secondary">{data.store} </td>
+                    <td className="text-body-secondary">{data.kol}</td>
+                    <td className="text-body-secondary">{data.izm}</td>
+                    <td className="text-body-secondary">{data.kodRas}</td>
+                    <td className="text-body-secondary">{data.status}</td>
+                    <td className="text-body-secondary">{data.kodSp}</td>
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
-                      <HomeReadExpenseModal data={data} />
-                      <HomeEditExpenseModal data={data} />
+                      <img src={WatchIcon} alt="watch icon" className="me-2" role="button"/>
+                      <img src={EditIcon} alt="edit icon" role="button"/>
                     </td>
                   </tr>
                 </>
@@ -122,4 +171,4 @@ const HomeExpenseTable = ({ tableData }) => {
   );
 };
 
-export default HomeExpenseTable;
+export default HomeMedicineTable;
