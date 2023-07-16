@@ -1,11 +1,11 @@
-import EditIcon from "../../assets/icons/edit-icon.svg"
-import WatchIcon from "../../assets/icons/eye-icon.svg"
+import EditIcon from "../../assets/icons/edit-icon.svg";
+import WatchIcon from "../../assets/icons/eye-icon.svg";
 import ExportIcon from "../../assets/icons/download-icon.svg";
 
 const tableData = [
   {
     id: 1,
-    name : "Лориста 50мг",
+    name: "Лориста 50мг",
     document: "C10001",
     kolich: 100,
     change: "5 лист / Коробка ",
@@ -23,7 +23,7 @@ const tableData = [
   },
   {
     id: 2,
-    name : "Парецатамол ",
+    name: "Парецатамол ",
     document: "C10001",
     kolich: 100,
     change: "5 лист / Коробка ",
@@ -41,7 +41,7 @@ const tableData = [
   },
   {
     id: 3,
-    name : "Парецатамол ",
+    name: "Парецатамол ",
     document: "C100012",
     kolich: 100,
     change: "5 лист / Коробка ",
@@ -118,7 +118,7 @@ const HomeMedicineTable = () => {
               return (
                 <>
                   <tr>
-                    <td className="text-body-secondary">{i+1}</td>
+                    <td className="text-body-secondary">{i + 1}</td>
                     <td className="text-primary">{data.document}</td>
                     <td className="text-primary">{data.kolich}</td>
                     <td className="text-primary">{data.change} </td>
@@ -130,8 +130,13 @@ const HomeMedicineTable = () => {
                     <td className="text-body-secondary">{data.kodSp}</td>
                     <td className="text-body-secondary">{data.data}</td>
                     <td>
-                      <img src={WatchIcon} alt="watch icon" className="me-2" role="button"/>
-                      <img src={EditIcon} alt="edit icon" role="button"/>
+                      <img
+                        src={WatchIcon}
+                        alt="watch icon"
+                        className="me-2"
+                        role="button"
+                      />
+                      <img src={EditIcon} alt="edit icon" role="button" />
                     </td>
                   </tr>
                 </>
