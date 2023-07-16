@@ -2,9 +2,9 @@ const StoreExtra = ({ extraData }) => {
   const data = { ...extraData };
   return (
     <>
-      <div className="store__inner-extra shadow-lg py-3 px-4 rounded-3 bg-white mb-5">
+      <div className="pharmacy__inner-extra shadow-lg py-3 px-4 rounded-3 bg-white mb-5">
         <h3 className="text-body-secondary text-center mb-4">
-          Склад : {data.name}
+          Аптека : {data.name}
         </h3>
         <div className="info d-flex gap-4">
           <div className="info-first">

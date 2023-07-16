@@ -115,7 +115,7 @@ const StoreMainTable = ({ tableData }) => {
                     <td className="text-primary">
                       <Link
                         className="text-decoration-none"
-                        to={`/store/${data.id}`}
+                        to={`/pharmacy/${data.id}`}
                       >
                         {data.name}
                       </Link>
