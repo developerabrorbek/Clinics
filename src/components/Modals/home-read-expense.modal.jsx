@@ -8,15 +8,15 @@ const HomeReadExpenseModal = ({ data }) => {
         role="button"
         className="me-2"
         data-bs-toggle="modal"
-        data-bs-target={`#readHomeIncomeModal${data.id}`}
+        data-bs-target={`#readHomeExpenseModal${data.id}`}
         alt="Read modal icon"
       ></img>
 
       <div
         className="modal fade"
-        id={`readHomeIncomeModal${data.id}`}
+        id={`readHomeExpenseModal${data.id}`}
         tabIndex="-1"
-        aria-labelledby="readHomeIncome"
+        aria-labelledby="readHomeExpense"
         aria-hidden="true"
       >
         <div className="modal-dialog modal-lg modal-dialog-centered">

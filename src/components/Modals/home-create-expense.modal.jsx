@@ -1,29 +1,29 @@
-import EditIcon from "../../assets/icons/edit-icon.svg";
 import ExitModal from "../../assets//icons/exit-modal.svg";
-const HomeEditExpenseModal = ({ data }) => {
+import AddIcon from "../../assets/icons/add-icon.svg";
+const HomeCreateExpenseModal = () => {
   return (
     <>
-      <img
-        src={EditIcon}
-        role="button"
-        className="me-2"
+      <button
+        className="btn btn-primary d-flex gap-2 align-items-center"
         data-bs-toggle="modal"
-        data-bs-target={`#editHomeExpenseModal${data.id}`}
-        alt="Edit modal icon"
-      ></img>
+        data-bs-target="#createHomeExpenseModal"
+      >
+        <img src={AddIcon} alt="add icon" />
+        Добавить расход
+      </button>
 
       <div
         className="modal fade"
-        id={`editHomeExpenseModal${data.id}`}
+        id="createHomeExpenseModal"
         tabIndex="-1"
-        aria-labelledby="editHomeExpense"
+        aria-labelledby="createHomeExpense"
         aria-hidden="true"
       >
         <div className="modal-dialog modal-lg modal-dialog-centered">
           <div className="modal-content shadow-lg p-3">
             <div className="modal-header text-center">
               <h2 className="modal-title fs-4 text-center  w-100 text-body-secondary">
-                Выписка медикамента : {data.name}
+                Выписка медикамента
               </h2>
               <img
                 src={ExitModal}
@@ -41,12 +41,13 @@ const HomeEditExpenseModal = ({ data }) => {
                       МЕДИКАМЕНТ
                     </p>
                     <select
-                      disabled
                       name="medicine"
                       id="medicine"
                       className="form-select form-select-sm text-secondary-emphasis w-100"
                     >
-                      <option value="0">Выберите медикамент</option>
+                      <option value="0" selected disabled>
+                        Выберите медикамент
+                      </option>
                       <option value="1">Парацетамол</option>
                       <option value="2">Парацетамол</option>
                     </select>
@@ -57,13 +58,15 @@ const HomeEditExpenseModal = ({ data }) => {
                         СКЛАД
                       </p>
                       <select
-                        disabled
                         name="store"
                         id="store"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">Главный</option>
+                        <option value="0" selected disabled>
+                          Выберите склад
+                        </option>
                         <option value="1">Главный</option>
+                        <option value="2">Главный</option>
                       </select>
                     </label>
                     <label htmlFor="quantity">
@@ -71,12 +74,14 @@ const HomeEditExpenseModal = ({ data }) => {
                         КОЛИЧЕСТВО
                       </p>
                       <select
-                        disabled
                         name="quantity"
                         id="quantity"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">100</option>
+                        <option value="0" selected disabled>
+                          Выберите количество
+                        </option>
+                        <option value="1">100</option>
                         <option value="2">101</option>
                       </select>
                     </label>
@@ -85,12 +90,14 @@ const HomeEditExpenseModal = ({ data }) => {
                         ЕДИНИЦА ИЗМЕРЕНИЯ
                       </p>
                       <select
-                        disabled
                         name="unit"
                         id="unit"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0">Капсула</option>
+                        <option value="0" selected disabled>
+                          Выберите единицу измерения
+                        </option>
+                        <option value="1">Капсула</option>
                         <option value="2">Капсула</option>
                       </select>
                     </label>
@@ -99,7 +106,6 @@ const HomeEditExpenseModal = ({ data }) => {
                         ДАТА РЕГИСТРАЦИИ
                       </p>
                       <input
-                        disabled
                         type="date"
                         name="registration"
                         id="registration"
@@ -108,19 +114,19 @@ const HomeEditExpenseModal = ({ data }) => {
                     </label>
                   </div>
                   <div className="form-body__right d-grid gap-3">
-                  <label htmlFor="pharmacy">
+                    <label htmlFor="pharmacy">
                       <p className="text-body-secondary mb-1 fs-custom">
-                      АПТЕКА
+                        АПТЕКА
                       </p>
                       <select
                         name="pharmacy"
                         id="pharmacy"
                         className="form-select form-select-sm text-secondary-emphasis w-100"
                       >
-                        <option value="0" disabled>
-                        Выберите аптеку
+                        <option value="0" selected disabled>
+                          Выберите аптеку
                         </option>
-                        <option value="1" selected>{data.chemist}</option>
+                        <option value="1">Неврология</option>
                         <option value="2">100</option>
                       </select>
                     </label>
@@ -161,7 +167,6 @@ const HomeEditExpenseModal = ({ data }) => {
                         ДАТА ВЗЯТИЯ
                       </p>
                       <input
-                        disabled
                         type="date"
                         name="date-of-collect"
                         id="date-of-collect"
@@ -174,12 +179,7 @@ const HomeEditExpenseModal = ({ data }) => {
                 <div className="form-footer row row-cols-2 mt-4 shadow-lg px-4 py-3  justify-content-between rounded-3 mb-3">
                   <label htmlFor="gave">
                     <p className="text-body-secondary mb-1 fs-custom">ОТДАЛ</p>
-                    <select
-                      name="gave"
-                      id="gave"
-                      className="form-select"
-                      disabled
-                    >
+                    <select name="gave" id="gave" className="form-select">
                       <option value="0" selected>
                         Камрон Хамроевич Олимов
                       </option>
@@ -190,7 +190,7 @@ const HomeEditExpenseModal = ({ data }) => {
                       ПРИНЯЛ
                     </p>
                     <select name="get" id="get" className="form-select">
-                      <option value="0" selected disabled>
+                      <option value="0" selected>
                         Выберите принимающего
                       </option>
                       <option value="1">Азиза Ахматовна Азизова</option>
@@ -219,4 +219,4 @@ const HomeEditExpenseModal = ({ data }) => {
   );
 };
 
-export default HomeEditExpenseModal;
+export default HomeCreateExpenseModal;
