@@ -1,8 +1,12 @@
 import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import Header from "../../components/Header";
-import HomeExpenseFilters from "../../components/TableFilters/home-expense.filter";
+import { useParams } from "react-router-dom";
 import DocumentMainTable from "../../components/Tables/document-main.table";
+import DealerFilters from "../../components/TableFilters/dealer.filter";
+import DealerExtra from "../../components/ExtraInfos/dealer-extra";
+
+
 
 const documentMainData = [
   {
@@ -79,22 +83,49 @@ const documentMainData = [
   },
 ];
 
-const Documents = () => {
+const dealersTableData = [
+  {
+    id: 1,
+    name: "OOO “My Pharm” ",
+    face: "Jamshid Vahobov ",
+    tel: "+99899 999 99 99",
+    contract: 12,
+  },
+  {
+    id: 2,
+    name: "OOO “My Pharm” ",
+    face: "Jamshid Vahobov ",
+    tel: "+99899 999 99 99",
+    contract: 11,
+  },
+  {
+    id: 3,
+    name: "OOO “My Pharm” ",
+    face: "Jamshid Vahobov ",
+    tel: "+99811 111 11 11",
+    contract: 10,
+  },
+];
+
+const SingleDealer = () => {
+  const { id } = useParams();
+  const foundedDealer = dealersTableData.find((el) => el.id == id);
   return (
     <>
       <Header />
-      <main className="main">
+      <main className="main mb-5">
         <Hero />
         <Navbar />
-        <div className="document px-2">
+        <div className="incomes px-2">
           <div className="container-fluid px-5 pt-3">
-            <div className="document__inner shadow-lg py-3 px-4 rounded-3 bg-white">
-              <div className="document-body shadow-lg py-3 rounded-2">
-                <h3 className="document-body__title text-center text-dark-emphasis mb-5">
-                  Список документов
+            <DealerExtra extraData={foundedDealer} />
+            <div className="income__inner shadow-lg py-3 px-4 rounded-3 bg-white">
+              <div className="income-body shadow-lg py-3 rounded-2">
+                <h3 className="income-body__title text-center text-dark-emphasis mb-5">
+                  Список медикаментов :
                 </h3>
                 <hr />
-                <HomeExpenseFilters />
+                <DealerFilters/>
                 <hr />
                 <DocumentMainTable tableData={documentMainData} />
               </div>
@@ -106,4 +137,4 @@ const Documents = () => {
   );
 };
 
-export default Documents;
+export default SingleDealer;

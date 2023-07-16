@@ -12,6 +12,8 @@ import Login from "./pages/Login";
 import { useAuthCustom } from "./hooks/auth.hook";
 import SingleStore from "./pages/SingleStore";
 import SinglePharmacy from "./pages/SinglePharmacy";
+import SingleDocument from "./pages/SingleDocument";
+import SingleDealer from "./pages/SingleDealer";
 
 const App = () => {
   useAuthCustom();
@@ -19,12 +21,14 @@ const App = () => {
     <>
       <Routes>
         <Route element={<Home />} path="/" />
-        <Route element={<Store />} path="/store"/>
+        <Route element={<Store />} path="/store" />
         <Route element={<SingleStore />} path="/store/:id" />
         <Route element={<Pharmacy />} path="/pharmacy" />
-        <Route element={<SinglePharmacy/>} path="/pharmacy/:id"/>
+        <Route element={<SinglePharmacy />} path="/pharmacy/:id" />
         <Route element={<Documents />} path="/documents" />
+        <Route element={<SingleDocument />} path="/documents/:id" />
         <Route element={<Delaers />} path="/dealers" />
+        <Route element={<SingleDealer />} path="/dealers/:id" />
         <Route element={<Medicine />} path="/medicine" />
         <Route element={<Login />} path="/login" />
         <Route element={<Error />} path="*" />
