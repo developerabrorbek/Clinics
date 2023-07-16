@@ -1,6 +1,7 @@
 import EditIcon from "../../assets/icons/edit-icon.svg";
 import WatchIcon from "../../assets/icons/eye-icon.svg";
 import ExportIcon from "../../assets/icons/download-icon.svg";
+import SortIcon from "../../assets/icons/sort-icon.svg"
 
 const tableData = [
   {
@@ -99,18 +100,18 @@ const HomeMedicineTable = () => {
         <table className="table table-responsive table-bordered">
           <thead>
             <tr>
-              <th>№</th>
-              <th>ДОКУМЕНТ</th>
-              <th>КОЛИЧ.</th>
-              <th>ЕД. ИЗМЕРЕНИЯ</th>
-              <th>СКЛАД</th>
-              <th>КОЛ. ВЗЯТ.</th>
-              <th>ЕД. ИЗМ. ВЗЯТ.</th>
-              <th>КОД РАСП.</th>
-              <th>СТАТУС РАСП.</th>
-              <th>КОД СП. М.</th>
-              <th>ДАТА</th>
-              <th>ДЕЙСТВИЕ</th>
+              <th>№ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ДОКУМЕНТ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОЛИЧ. <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ЕД. ИЗМЕРЕНИЯ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>СКЛАД <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОЛ. ВЗЯТ. <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ЕД. ИЗМ. ВЗЯТ. <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОД РАСП. <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>СТАТУС РАСП. <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОД СП. М. <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ДАТА <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ДЕЙСТВИЕ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
             </tr>
           </thead>
           <tbody>

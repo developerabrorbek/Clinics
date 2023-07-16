@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Pharmacy from "./pages/Pharmasy";
@@ -6,8 +8,11 @@ import Documents from "./pages/Documents";
 import Delaers from "./pages/Dealers";
 import Medicine from "./pages/Medicine";
 import Error from "./pages/Error";
+import Login from "./pages/Login";
+import { useAuthCustom } from "./hooks/auth.hook";
 
 const App = () => {
+  useAuthCustom()
   return (
     <>
       <Routes>
@@ -17,8 +22,10 @@ const App = () => {
         <Route element={<Documents />} path="/documents" />
         <Route element={<Delaers />} path="/dealers" />
         <Route element={<Medicine />} path="/medicine" />
+        <Route element={<Login/>} path="/login"/>
         <Route element={<Error />} path="*" />
       </Routes>
+      <ToastContainer/>
     </>
   );
 };

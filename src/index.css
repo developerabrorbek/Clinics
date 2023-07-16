@@ -8,6 +8,11 @@ body {
   background-color: #f3f4f4;
 }
 
+.main-login {
+  height: 100vh;
+  width: 100vw;
+}
+
 .hero-body {
   left: 22px;
   bottom: 38px;
@@ -52,6 +57,3 @@ th {
   right: 12px;
 }
 
-/* .modal-custom {
-  width: 1387px !important;
-} */

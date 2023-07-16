@@ -2,6 +2,8 @@ import HomeCreateIncomeModal from "../Modals/home-create-income.modal";
 import HomeEditIncomeModal from "../Modals/home-edit-income.modal";
 import HomeReadIncomeModal from "../Modals/home-read-income.modal";
 import HomeWatchMedicineModal from "../Modals/home-watch-medicine.modal";
+import SortIcon from "../../assets/icons/sort-icon.svg"
+import SortReverseIcon from "../../assets/icons/sort-reverse.svg"
 
 const HomeIncomeTable = ({ tableData }) => {
   return (
@@ -67,17 +69,17 @@ const HomeIncomeTable = ({ tableData }) => {
         <table className="table table-responsive table-bordered">
           <thead>
             <tr>
-              <th>№</th>
-              <th>НАИМЕНОВАНИЕ</th>
-              <th>ДИЛЕР</th>
-              <th>ДОГОВОР</th>
-              <th>ЕД. ИЗМЕРЕНИЯ</th>
-              <th>КОЛИЧ.</th>
-              <th>КОЛ. ВЗЯТОГО</th>
-              <th>КОЛ. ОСТАТОК</th>
-              <th>КОЛ. ВОЗВРАТА</th>
-              <th>ДАТА</th>
-              <th>ДЕЙСТВИЕ</th>
+              <th>№ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>НАИМЕНОВАНИЕ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ДИЛЕР <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ДОГОВОР <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ЕД. ИЗМЕРЕНИЯ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОЛИЧ. <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОЛ. ВЗЯТОГО <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОЛ. ОСТАТОК <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>КОЛ. ВОЗВРАТА <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ДАТА <img src={SortIcon} alt="sort icon" className="float-end" /></th>
+              <th>ДЕЙСТВИЕ <img src={SortIcon} alt="sort icon" className="float-end" /></th>
             </tr>
           </thead>
           <tbody>

@@ -1,12 +1,42 @@
-import EditIcon from "../../assets/icons/edit-icon.svg";
-import EyeIcon from "../../assets/icons/eye-icon.svg";
+import SortIcon from "../../assets/icons/sort-icon.svg";
+import SortIconReverse from "../../assets/icons/sort-reverse.svg";
 import DownloadIcon from "../../assets/icons/download-icon.svg";
 import HomeCreateExpenseModal from "../Modals/home-create-expense.modal";
 import HomeEditExpenseModal from "../Modals/home-edit-expense.modal";
 import HomeReadExpenseModal from "../Modals/home-read-expense.modal";
 import HomeWatchMedicineModal from "../Modals/home-watch-medicine.modal";
+import { useState } from "react";
 
 const HomeExpenseTable = ({ tableData }) => {
+  const [data, setData] = useState([...tableData]);
+  const [order, setOrder] = useState("asc");
+  const [icon, setIcon] = useState(SortIcon);
+
+  const handleSort = (e) => {
+    const column = e.target.dataset.column;
+    const order = e.target.dataset.order;
+
+    if (order == "asc") {
+      setOrder("des");
+      setIcon(SortIconReverse);
+      const sortedData = data.sort((a, b) => {
+        a[column].toString() < b[column].toString()
+          ? 1
+          : a[column].toString() > b[column].toString()
+          ? -1
+          : 0;
+      });
+      setData([...sortedData]);
+    } else if (order == "des") {
+      setOrder("asc");
+      setIcon(SortIcon);
+      const sortedData = data.sort((a, b) => {
+        a[column].toString() > b[column].toString() ? 1 : a[column].toString() < b[column].toString() ? -1 : 0;
+      });
+      setData([...sortedData]);
+    }
+  };
+
   return (
     <>
       <div className="income-body__table p-3 d-flex justify-content-center flex-column gap-3">
@@ -48,21 +78,48 @@ const HomeExpenseTable = ({ tableData }) => {
         <table className="table table-responsive table-bordered">
           <thead>
             <tr>
-              <th>№</th>
-              <th>НАИМЕНОВАНИЕ</th>
-              <th>Склад</th>
-              <th>Аптека</th>
-              <th>ЕД. ИЗМЕРЕНИЯ</th>
-              <th>КОЛИЧ.</th>
-              <th>КОЛ. ВЗЯТОГО</th>
-              <th>ОБ ОСТАТОК</th>
-              <th>СТАТУС</th>
-              <th>ДАТА</th>
-              <th>ДЕЙСТВИЕ</th>
+              <th onClick={handleSort} data-column="number" data-order={order}>
+                № <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="name" data-order={order}>
+                НАИМЕНОВАНИЕ{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="store" data-order={order}>
+                СКЛАД <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="chemist" data-order={order}>
+                АПТЕКА <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="change" data-order={order}>
+                ЕД. ИЗМЕРЕНИЯ{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="kolich" data-order={order}>
+                КОЛИЧ. <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="kolvz" data-order={order}>
+                КОЛ. ВЗЯТОГО{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="left" data-order={order}>
+                ОБ ОСТАТОК{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="status" data-order={order}>
+                СТАТУС <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="data" data-order={order}>
+                ДАТА <img src={icon} alt="sort icon" className="float-end" />
+              </th>
+              <th onClick={handleSort} data-column="action" data-order={order}>
+                ДЕЙСТВИЕ{" "}
+                <img src={icon} alt="sort icon" className="float-end" />
+              </th>
             </tr>
           </thead>
           <tbody>
-            {tableData.map((data) => {
+            {data.map((data) => {
               return (
                 <>
                   <tr>
@@ -93,7 +150,7 @@ const HomeExpenseTable = ({ tableData }) => {
 
         <div className="table-pagination d-flex align-items-center justify-content-between">
           <p className="table-pagination__text text-body-secondary">
-            Показано от 1 до {tableData.length} из {tableData.length} записей
+            Показано от 1 до {data.length} из {data.length} записей
           </p>
           <ul className="table-pagination__body pagination d-flex gap-2">
             <li className="page-item disabled rounded-2 overflow-hidden">
